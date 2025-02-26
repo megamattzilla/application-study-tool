@@ -15,8 +15,10 @@ processors:
         value: bigip-ast-metric
 
 exporters:
-  otlphttp/metrics-local:
-    endpoint: http://prometheus:9090/api/v1/otlp
+  otlp/otel-prometheus-exporter:
+    endpoint: otel-collector-prom-exporter:4317
+    tls:
+      insecure: true
   otlp/f5-datafabric:
     endpoint: us.edge.df.f5.com:443
     headers:

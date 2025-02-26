@@ -38,6 +38,22 @@ services:
       - ".env.device-secrets"
     networks:
       - 7lc_network
+## Adding Generic Otel collector to perform otlp (grpc) to prometheus export (/metrics endpoint) 
+  otel-collector-prom-exporter:
+    image: otel/opentelemetry-collector-contrib:0.115.1
+    restart: unless-stopped
+    ports:
+      - 9099:9099
+      - 4317:4317
+    volumes:
+      - ./services/otel_collector:/etc/otel-collector-config
+    command:
+      - "--config=/etc/otel-collector-config/defaults/prometheus-exporter-config.yaml"
+    env_file:
+      - ".env"
+      - ".env.device-secrets"
+    networks:
+      - 7lc_network
 
   grafana:
     image: grafana/grafana:11.2.0

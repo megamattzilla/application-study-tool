@@ -27,6 +27,6 @@ bigip/1:
     #   enabled: false
     # f5.gtm:
     #   enabled: false
-  # tls:
-  #   insecure_skip_verify: true
-  #   ca_file:
+  tls:
+    insecure_skip_verify: true
+    ca_file:
