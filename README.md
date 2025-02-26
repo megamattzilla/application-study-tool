@@ -4,6 +4,10 @@ Fork of AST project 0.8.1 with one notable change:
 - Second otel collector configured as otlp to prometheus exporter
 - Prometheus is configured to scrape otel prometheus exporter
 
+![image](https://github.com/user-attachments/assets/ca2d056a-fd69-4933-af95-f952c4502e25)
+
+
+
 ## Overview
 
 > See the [AST Docsite](https://f5devcentral.github.io/application-study-tool/) for detailed
